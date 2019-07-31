@@ -1,22 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingStart="@dimen/padding"
-        android:paddingEnd="@dimen/padding"
-        >
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
 
     <TextView
+            android:text="Geoffrey Kim"
             android:id="@+id/textName"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            style="@style/Text"/>
+
+    <TextView
+            android:id="@+id/nickname_text"
+            style="@style/Text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/name"
+            android:text="@={myName.nickname}"
             android:textAlignment="center"
+            android:visibility="gone"
 
-            />
+    />
+
+
+    <EditText
+            android:id = "@+id/nickname_edit"
+            style="@style/Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/what_is_your_nickname"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+    />
+
+    <Button
+            android:id="@+id/done_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/layout_margin"
+            android:text="Done"
+    />
 
     <ImageView
             android:id="@+id/star_image"
@@ -24,8 +55,7 @@
             android:layout_width="match_parent"
             android:layout_marginTop="@dimen/layout_margin"
             android:contentDescription="@string/yellow_star"
-            app:srcCompat="@android:drawable/btn_star_big_on"
-            />
+            app:srcCompat="@android:drawable/btn_star_big_on"/>
 
     <ScrollView
             android:layout_width="match_parent"
@@ -33,39 +63,14 @@
     >
 
         <TextView
-            android:id="@+id/bio_text"
-            style="@style/NameStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/bio"
-            android:lineSpacingMultiplier="1.2"
+                android:id="@+id/bio_text"
+                style="@style/Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bio"
+
         />
 
-        <EditText
-            android:id="@+id/nickname_edit"
-            style="@style/NameStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/what_is_your_nickname"
-            android:inputType="textPersonName"
-            android:text="@={myName.nickname}"
-            android:textAlignment="center"
-            />
-        <Button
-            android:id="@+id/done_button"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/layout_margin"
-            android:fontFamily="@font/roboto"
-            android:text="@string/done"
-            android:textAlignment="center"
-            />
-
-
     </ScrollView>
-
-
 
 </LinearLayout>
